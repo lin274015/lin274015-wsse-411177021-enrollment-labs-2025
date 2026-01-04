@@ -8,15 +8,15 @@ https://github.com/lin274015/lin274015-wsse-411177021-enrollment-labs-2025/pull/
 
 ## 3. Swagger Editor 截圖
 右側顯示無紅字，並標註 Repo Raw URL  
-![](01-editor.png)
+![](01-editor.png.png)
 
 ## 4. PR 綠燈截圖（OpenAPI Minimal CI）
 PR 頁面顯示 All checks have passed  
-![](02-pr-green.png)
+![](02-pr-green.png.png)
 
 ## 5. CI 內容截圖（Job log）
 OpenAPI / swagger validate 成功片段  
-![](03-actions-log.png)
+![](03-actions-log.png.png)
 
 ## 6. 重點片段連結
 

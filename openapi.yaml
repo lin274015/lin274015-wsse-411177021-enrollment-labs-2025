@@ -1,11 +1,90 @@
 openapi: "3.0.0"
+
 info:
   title: "Student API"
   version: "1.0.0"
+  license:
+    name: MIT
+
+servers:
+  - url: http://localhost:8080
+
+# 全域宣告：此 API 不需要驗證（符合 Redocly security-defined 規則）
+security: []
+
 paths:
   /health:
     get:
       summary: Health check
+      operationId: healthCheck
       responses:
         "200":
           description: OK
+        "400":
+          description: Bad Request
+
+  /students:
+    get:
+      summary: List students
+      operationId: listStudents
+      responses:
+        "200":
+          description: Student list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Student"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+    post:
+      summary: Create student
+      operationId: createStudent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Student"
+      responses:
+        "201":
+          description: Created
+          headers:
+            Location:
+              description: URL of the created student
+              schema:
+                type: string
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+components:
+  schemas:
+    Student:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "Alice"
+
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Invalid request"

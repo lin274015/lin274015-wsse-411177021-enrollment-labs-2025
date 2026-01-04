@@ -4,7 +4,7 @@
 https://github.com/你的帳號/lab01-openapi
 
 ## 2. Pull Request 連結（至少一個通過 CI）
-https://github.com/你的帳號/lab01-openapi/pull/1
+https://github.com/lin274015/lin274015-wsse-411177021-enrollment-labs-2025/pull/1
 
 ## 3. Swagger Editor 截圖
 右側顯示無紅字，並標註 Repo Raw URL  

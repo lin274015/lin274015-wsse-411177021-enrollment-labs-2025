@@ -1,11 +1,15 @@
-openapi: "3.0.0"
-info:
-  title: "Student API"
-  version: "1.0.0"
-paths:
-  /health:
-    get:
-      summary: Health check
-      responses:
-        "200":
-          description: OK
+name: OpenAPI Validate
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate OpenAPI
+        uses: char0n/swagger-editor-validate@v1
+        with:
+          definition-file: openapi.yaml

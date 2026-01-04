@@ -1,10 +1,10 @@
 # Lab-01 Submission
 
 ## 1. Repo 連結（Public）
-https://github.com/lin274015/lab01-openapi
+https://github.com/lin274015/lin274015-wsse-411177021-enrollment-labs-2025
 
 ## 2. Pull Request 連結（至少一個通過 CI）
-https://github.com/你的帳號/lab01-openapi/pull/1
+https://github.com/lin274015/lin274015-wsse-411177021-enrollment-labs-2025/pull/1
 
 ## 3. Swagger Editor 截圖
 右側顯示無紅字，並標註 Repo Raw URL  
@@ -19,12 +19,6 @@ OpenAPI / swagger validate 成功片段
 ![](03-actions-log.png)
 
 ## 6. 重點片段連結
-- openapi.yaml（Raw 連結）  
-  - /health  
-  - GET /students  
-  - POST /students（201 + Location）  
-  - Student schema  
-  - Error schema
 
-Raw URL：
-https://raw.githubusercontent.com/你的帳號/lab01-openapi/main/openapi.yaml
+openapi.yaml（Raw 連結）  
+https://raw.githubusercontent.com/lin274015/lin274015-wsse-411177021-enrollment-labs-2025/main/openapi.yaml

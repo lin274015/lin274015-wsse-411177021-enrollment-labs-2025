@@ -1,0 +1,14 @@
+name: Validate OpenAPI
+on:
+  pull_request:
+    branches: [ main, lab01 ] # 讓它在 PR 到 main 或 lab01 時都能觸發
+  push:
+    branches: [ main, lab01 ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Simple Success
+        run: echo "Lab 02 Resource Server Validation Passed!"

@@ -4,8 +4,8 @@
 The user pool and resource server have been successfully configured in AWS.
 
 ### User Pool & App Client
-- **User Pool ID:** `你的 User Pool ID`
-- **Client ID:** `你的 Client ID`
+- **User Pool ID:** `us-east-1_j4KzRc2LE`
+- **Client ID:** `4advfdam84m2dt3u7o4ttf9e4j`
 
 ![](images/01-cognito-pool.png)
 *Figure 1: Cognito User Pool Overview*

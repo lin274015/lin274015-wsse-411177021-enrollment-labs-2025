@@ -1,11 +1,49 @@
 openapi: "3.0.0"
+
 info:
   title: "Student API"
   version: "1.0.0"
+
+components:
+  securitySchemes:
+    CognitoOAuth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: "https://example.auth.ap-northeast-1.amazoncognito.com/oauth2/authorize"
+          tokenUrl: "https://example.auth.ap-northeast-1.amazoncognito.com/oauth2/token"
+          scopes:
+            students.read: "Read student data"
+            students.write: "Create or update student data"
+
+# 🔒 全域安全：預設所有 API 都要 students.read
+security:
+  - CognitoOAuth2:
+      - students.read
+
 paths:
   /health:
     get:
       summary: Health check
+      # 🔓 匿名端點（重點）
+      security: []
       responses:
         "200":
           description: OK
+
+  /students:
+    get:
+      summary: List students
+      responses:
+        "200":
+          description: OK
+
+    post:
+      summary: Create student
+      # 🔒 寫入要 students.write
+      security:
+        - CognitoOAuth2:
+            - students.write
+      responses:
+        "201":
+          description: Created

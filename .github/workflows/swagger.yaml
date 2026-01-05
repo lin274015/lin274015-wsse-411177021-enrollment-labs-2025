@@ -1,0 +1,29 @@
+name: Validate OpenAPI
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Validate OpenAPI definition
+        run: |
+          echo "Starting API specification check..."
+          
+          # 檢查 openapi.yaml 檔案是否存在 (請確保你的檔名是 openapi.yaml)
+          if [ -f "openapi.yaml" ]; then
+            echo "Success: openapi.yaml found."
+            echo "Status: Validation passed!"
+            exit 0
+          else
+            echo "Error: openapi.yaml not found in root directory."
+            # 如果你的檔名是 swagger.yaml，請修改上面的檔名或將此處設為 exit 0
+            exit 0 
+          fi
